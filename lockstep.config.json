@@ -1,0 +1,19 @@
+{
+  "source": "AGENTS.md",
+  "targets": [
+    "claude"
+  ],
+  "ignore": [
+    "apps/**",
+    ".cursor/**",
+    ".cursorrules",
+    ".github/copilot-instructions.md",
+    "GEMINI.md",
+    ".windsurfrules",
+    ".clinerules"
+  ],
+  "lint": {
+    "maxLines": 200,
+    "maxChars": 12000
+  }
+}

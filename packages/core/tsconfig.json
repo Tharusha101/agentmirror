@@ -1,0 +1,5 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "comment": "Build/emit is handled by tsup; tsc is used only for --noEmit type-checking.",
+  "include": ["src", "test"]
+}

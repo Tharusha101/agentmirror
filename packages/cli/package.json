@@ -1,0 +1,37 @@
+{
+  "name": "lockstep",
+  "version": "0.1.0",
+  "description": "One canonical AGENTS.md, synced to every AI coding tool — drift-checked and lean.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "lockstep": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "agents.md",
+    "claude",
+    "cursor",
+    "copilot",
+    "ai",
+    "context",
+    "drift",
+    "lint",
+    "cli"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@lockstep/core": "*",
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.1",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/prompts": "^2.4.9"
+  }
+}

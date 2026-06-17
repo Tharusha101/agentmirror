@@ -1,0 +1,27 @@
+{
+  "name": "lockstep-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Lockstep — one canonical AGENTS.md, synced to every AI coding tool, kept drift-free and lean.",
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @lockstep/core && npm run build -w lockstep",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "npm run typecheck -w @lockstep/core && npm run typecheck -w lockstep",
+    "lockstep": "node packages/cli/dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

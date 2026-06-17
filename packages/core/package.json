@@ -1,0 +1,24 @@
+{
+  "name": "@lockstep/core",
+  "version": "0.1.0",
+  "description": "Lockstep core engine: parse AGENTS.md, render tool mirrors, detect drift, lint for leanness. Pure logic, no I/O.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  }
+}
