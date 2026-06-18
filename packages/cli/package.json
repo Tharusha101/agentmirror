@@ -22,14 +22,14 @@
     "lint",
     "cli"
   ],
-  "homepage": "https://github.com/OWNER/agentmirror#readme",
+  "homepage": "https://github.com/Tharusha101/agentmirror#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OWNER/agentmirror.git",
+    "url": "git+https://github.com/Tharusha101/agentmirror.git",
     "directory": "packages/cli"
   },
   "bugs": {
-    "url": "https://github.com/OWNER/agentmirror/issues"
+    "url": "https://github.com/Tharusha101/agentmirror/issues"
   },
   "engines": {
     "node": ">=18"

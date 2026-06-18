@@ -40,7 +40,7 @@ Global `--cwd <dir>` runs against another directory (handy in CI/monorepos).
 }
 ```
 
-Full docs, the format table, and a clonable demo: **https://github.com/OWNER/agentmirror**
+Full docs, the format table, and a clonable demo: **https://github.com/Tharusha101/agentmirror**
 
 ## License
 
