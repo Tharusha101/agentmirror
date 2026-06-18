@@ -39,6 +39,10 @@ lockstep lint     # flag bloat / stale references; suggest cuts
 
 Edit `AGENTS.md`, run `lockstep sync`, and `CLAUDE.md`, `.cursor/rules/agents.mdc`, `.github/copilot-instructions.md`, `GEMINI.md`, `.windsurfrules`, and `.clinerules` are regenerated from it. Each generated file carries a banner so no one hand-edits a mirror by mistake.
 
+## Migrating from scattered rule files
+
+Already have a `CLAUDE.md`, a `.cursorrules`, and a `copilot-instructions.md` drifting apart? The **[migration guide](docs/migrating-to-agents-md.md)** walks you from fragmented files to one curated `AGENTS.md` in about ten minutes — including which mirrors you actually need (many tools read `AGENTS.md` directly), how to resolve conflicting rules, and how to lock it in CI.
+
 ## Keep it honest in CI
 
 Add a check so a drifted or stale context file fails the build:

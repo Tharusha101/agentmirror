@@ -15,3 +15,4 @@ First public release — the open-source CLI MVP.
 - `lockstep review` — placeholder for the future opt-in AI tightening feature.
 - Config-driven format registry (add a tool = one entry).
 - Cross-platform CI matrix (Linux/macOS/Windows); 40 unit + integration tests.
+- Migration guide: `docs/migrating-to-agents-md.md`.
