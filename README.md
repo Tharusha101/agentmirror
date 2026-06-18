@@ -39,6 +39,11 @@ agentmirror lint     # flag bloat / stale references; suggest cuts
 
 Edit `AGENTS.md`, run `agentmirror sync`, and `CLAUDE.md`, `.cursor/rules/agents.mdc`, `.github/copilot-instructions.md`, `GEMINI.md`, `.windsurfrules`, and `.clinerules` are regenerated from it. Each generated file carries a banner so no one hand-edits a mirror by mistake.
 
+## Demo
+
+- **Terminal walkthrough** — [`demo/`](demo/README.md): conflicting rule files → one synced `AGENTS.md` → drift and stale rules caught in CI. Run `./demo/walkthrough.sh` (throwaway temp dir).
+- **Web playground** — [`apps/playground`](apps/playground): paste an `AGENTS.md` and watch every tool's mirror generate live in your browser. Runs the real `@agentmirror/core` engine client-side — nothing uploaded. `npm run dev -w @agentmirror/playground`.
+
 ## Migrating from scattered rule files
 
 Already have a `CLAUDE.md`, a `.cursorrules`, and a `copilot-instructions.md` drifting apart? The **[migration guide](docs/migrating-to-agents-md.md)** walks you from fragmented files to one curated `AGENTS.md` in about ten minutes — including which mirrors you actually need (many tools read `AGENTS.md` directly), how to resolve conflicting rules, and how to lock it in CI.

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AgentMirror — playground</title>
+    <meta
+      name="description"
+      content="Paste an AGENTS.md and see every AI tool's context file generated live, in your browser."
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="logo">▦</span>
+        <span>AgentMirror</span>
+        <span class="tag">playground</span>
+      </div>
+      <nav>
+        <a href="https://github.com/Tharusha101/agentmirror" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.npmjs.com/package/agentmirror" target="_blank" rel="noreferrer">npm</a>
+      </nav>
+    </header>
+
+    <p class="lede">
+      One canonical <code>AGENTS.md</code>, mirrored to every AI coding tool — live, in your browser.
+      This page runs the real <code>@agentmirror/core</code> engine client-side; nothing is uploaded.
+    </p>
+
+    <main>
+      <section class="pane">
+        <div class="pane-head">
+          <h2>AGENTS.md <span class="muted">— canonical source (edit me)</span></h2>
+        </div>
+        <textarea id="source" spellcheck="false"></textarea>
+        <div class="lint" id="lint"></div>
+      </section>
+
+      <section class="pane">
+        <div class="pane-head">
+          <h2>Generated mirrors</h2>
+          <div class="tabs" id="tabs"></div>
+        </div>
+        <pre class="mirror"><code id="mirror"></code></pre>
+      </section>
+    </main>
+
+    <footer>
+      Sync is deterministic — no AI. Drift &amp; stale-reference checks run in CI via
+      <code>agentmirror check</code>.
+    </footer>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

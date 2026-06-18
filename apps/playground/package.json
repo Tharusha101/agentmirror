@@ -1,0 +1,16 @@
+{
+  "name": "@agentmirror/playground",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browser playground — runs the pure @agentmirror/core engine client-side. No backend.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@agentmirror/core": "*",
+    "vite": "^5.4.11"
+  }
+}
