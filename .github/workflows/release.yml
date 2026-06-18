@@ -1,8 +1,8 @@
 name: release
 
-# Publishes the `lockstep` CLI to npm when a version tag is pushed.
+# Publishes the `agentmirror` CLI to npm when a version tag is pushed.
 # Prerequisites (one-time, human):
-#   1. Create the npm package name (verify `lockstep` is available, or rename).
+#   1. Create the npm package name (verify `agentmirror` is available, or rename).
 #   2. Add an npm automation token as the repo secret `NPM_TOKEN`.
 # Then: bump versions, `git tag v0.1.0 && git push --tags`.
 
@@ -27,6 +27,6 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm test
-      - run: npm publish -w lockstep --provenance --access public
+      - run: npm publish -w agentmirror --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

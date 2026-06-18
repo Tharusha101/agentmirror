@@ -1,5 +1,5 @@
 /**
- * Shared types for the Lockstep core engine.
+ * Shared types for the AgentMirror core engine.
  *
  * The engine is pure: it never touches the filesystem. Callers (the CLI, the
  * GitHub App) read files, hand strings + a repo index to these functions, and

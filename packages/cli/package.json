@@ -1,12 +1,12 @@
 {
-  "name": "lockstep",
+  "name": "agentmirror",
   "version": "0.1.0",
   "description": "One canonical AGENTS.md, synced to every AI coding tool — drift-checked and lean.",
   "license": "MIT",
   "author": "Tharusha <tharusha.pahasara1019@gmail.com>",
   "type": "module",
   "bin": {
-    "lockstep": "./dist/index.js"
+    "agentmirror": "./dist/index.js"
   },
   "files": [
     "dist"
@@ -22,14 +22,14 @@
     "lint",
     "cli"
   ],
-  "homepage": "https://github.com/OWNER/lockstep#readme",
+  "homepage": "https://github.com/OWNER/agentmirror#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OWNER/lockstep.git",
+    "url": "git+https://github.com/OWNER/agentmirror.git",
     "directory": "packages/cli"
   },
   "bugs": {
-    "url": "https://github.com/OWNER/lockstep/issues"
+    "url": "https://github.com/OWNER/agentmirror/issues"
   },
   "engines": {
     "node": ">=18"
@@ -48,7 +48,7 @@
     "prompts": "^2.4.2"
   },
   "devDependencies": {
-    "@lockstep/core": "*",
+    "@agentmirror/core": "*",
     "@types/prompts": "^2.4.9"
   }
 }

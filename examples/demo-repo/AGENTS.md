@@ -1,7 +1,7 @@
 # Acme Widgets — Agent Guide
 
 > Canonical context for AI coding agents on this repo. Edit this file, then run
-> `lockstep sync`. Keep it lean — every line must earn its place.
+> `agentmirror sync`. Keep it lean — every line must earn its place.
 
 ## Project
 

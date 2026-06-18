@@ -1,10 +1,10 @@
-# Lockstep — Business Plan & Authority Doc
+# AgentMirror — Business Plan & Authority Doc
 
-> **Codename:** Lockstep *(provisional — rename before public launch. See "Naming" at the end.)*
+> **Name:** AgentMirror *(chosen 2026-06-18 — npm package `agentmirror`; working codename was "Lockstep". See "Naming" at the end.)*
 > **One-line pitch:** One source of truth for your AI coding-agent context, synced to every tool and kept lean and drift-free.
 > **Owner:** Tharusha · **Location:** Sri Lanka · **Type:** Bootstrapped solo micro-SaaS, run as a side hustle, operated with AI agents.
 > **Primary goal:** Reach a sustained **USD $100+/month** in net recurring revenue, then scale.
-> **Status:** Pre-build. This doc is the strategic source of truth. `CLAUDE.md` is the build source of truth.
+> **Status:** Phase 1 built (OSS CLI). This doc is the strategic source of truth; `AGENTS.md` is the build source of truth (`CLAUDE.md` is generated from it).
 
 ---
 
@@ -43,7 +43,7 @@ Most teams use more than one tool, so the same rules get copied into several fil
 
 ## 2. The product
 
-**What Lockstep is:** a tool that treats `AGENTS.md` as the canonical source of truth and keeps every other tool's context file in sync with it — automatically, in a way that survives Windows and CI — while keeping the files **lean and accurate**.
+**What AgentMirror is:** a tool that treats `AGENTS.md` as the canonical source of truth and keeps every other tool's context file in sync with it — automatically, in a way that survives Windows and CI — while keeping the files **lean and accurate**.
 
 Three jobs, in priority order:
 
@@ -51,7 +51,7 @@ Three jobs, in priority order:
 2. **Drift detection (the recurring value).** A GitHub App / CI check that **fails the build or comments on the PR** when (a) the mirrors diverge from the source, or (b) a rule references a file, script, or command that no longer exists in the repo (stale rules).
 3. **Lint for leanness.** Flags bloat — lines that merely restate what the code already says — and enforces a budget (keep the file short; every line must earn its place: *"would removing this cause the agent to make a mistake it can't recover from?"*).
 
-**What Lockstep is NOT — and why this matters:** it is **not** a tool that uses AI to auto-write walls of context for you. Independent analysis in 2026 found that LLM-generated context files actually *hurt* agent accuracy (more tokens, more noise, ~20%+ higher inference cost), while lean, human-curated files help. Auto-generating and committing performs **worse than no file at all**. Lockstep therefore:
+**What AgentMirror is NOT — and why this matters:** it is **not** a tool that uses AI to auto-write walls of context for you. Independent analysis in 2026 found that LLM-generated context files actually *hurt* agent accuracy (more tokens, more noise, ~20%+ higher inference cost), while lean, human-curated files help. Auto-generating and committing performs **worse than no file at all**. AgentMirror therefore:
 
 - Treats the human's curated `AGENTS.md` as authoritative.
 - Uses AI only to **suggest and tighten** (propose removals of bloat, flag stale references, optionally draft a *starter* file the human then edits) — never to silently generate or auto-commit rules.
@@ -75,7 +75,7 @@ This is the moat: sync + drift + lint + governance is operational software groun
 
 **Open-core.**
 
-- **Free (open source, MIT):** `lockstep` CLI — sync + local lint, run manually or in your own CI. Free GitHub App on **public** repos, single repo. This is the distribution engine, not a loss leader to resent.
+- **Free (open source, MIT):** `agentmirror` CLI — sync + local lint, run manually or in your own CI. Free GitHub App on **public** repos, single repo. This is the distribution engine, not a loss leader to resent.
 - **Paid (subscription, the GitHub App running continuously):**
   - PR-level **drift detection** (checks + comments) on **private** repos.
   - **Lint/bloat** enforcement in CI with team-configurable rules.
@@ -197,4 +197,4 @@ Phased, with explicit pause points for actions only you can do. Build the founda
 
 ## Naming
 
-`Lockstep` is a placeholder (it evokes "everything in sync"). Pick the real name yourself — short, typeable as a CLI command, low search-collision, ideally `.dev`-able. Some directions to react to: a sync/source-of-truth metaphor (e.g. *throughline*, *keystone*, *concord*), or a context/canon metaphor. Whatever you choose, lock it before the public OSS repo goes live so the package name and domain don't have to change later.
+**Name chosen: AgentMirror.** The working codename was *Lockstep*, but `lockstep` — and the suggested *throughline* / *keystone* / *concord* — were already taken on npm. `agentmirror` is available as an unscoped npm package, reads well as a CLI command, and evokes mirroring the canonical `AGENTS.md` out to every tool. The GitHub repo can be `agentmirror` too; lock the matching domain before the public OSS repo goes live.

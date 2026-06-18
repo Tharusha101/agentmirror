@@ -7,7 +7,7 @@ const root = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   resolve: {
     alias: {
-      '@lockstep/core': resolve(root, 'packages/core/src/index.ts'),
+      '@agentmirror/core': resolve(root, 'packages/core/src/index.ts'),
     },
   },
   test: {

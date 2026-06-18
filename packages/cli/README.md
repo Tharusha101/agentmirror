@@ -1,24 +1,24 @@
-# lockstep
+# agentmirror
 
 > One canonical `AGENTS.md`, synced to every AI coding tool — kept drift-free and lean.
 
-Every AI coding tool wants its own context file (Claude Code → `CLAUDE.md`, Cursor → `.cursor/rules/`, Copilot → `.github/copilot-instructions.md`, …). Keep **one** `AGENTS.md` and let `lockstep` generate and police the rest — real files, cross-platform, no symlinks.
+Every AI coding tool wants its own context file (Claude Code → `CLAUDE.md`, Cursor → `.cursor/rules/`, Copilot → `.github/copilot-instructions.md`, …). Keep **one** `AGENTS.md` and let `agentmirror` generate and police the rest — real files, cross-platform, no symlinks.
 
 ## Install
 
 ```bash
-npm install -g lockstep
+npm install -g agentmirror
 # or, no install:
-npx lockstep <command>
+npx agentmirror <command>
 ```
 
 ## Commands
 
 ```bash
-lockstep init     # create AGENTS.md + lockstep.config.json (you curate them)
-lockstep sync     # regenerate every mirror from AGENTS.md
-lockstep check    # CI gate: fail if mirrors drift or rules reference missing files
-lockstep lint     # flag bloat / stale references; suggest cuts
+agentmirror init     # create AGENTS.md + agentmirror.config.json (you curate them)
+agentmirror sync     # regenerate every mirror from AGENTS.md
+agentmirror check    # CI gate: fail if mirrors drift or rules reference missing files
+agentmirror lint     # flag bloat / stale references; suggest cuts
 ```
 
 Global `--cwd <dir>` runs against another directory (handy in CI/monorepos).
@@ -29,7 +29,7 @@ Global `--cwd <dir>` runs against another directory (handy in CI/monorepos).
 2. **Detect drift** — a mirror diverged from source, or a rule references a file/script that no longer exists.
 3. **Lint for leanness** — flag bloat and stale references.
 
-## Config — `lockstep.config.json`
+## Config — `agentmirror.config.json`
 
 ```json
 {
@@ -40,7 +40,7 @@ Global `--cwd <dir>` runs against another directory (handy in CI/monorepos).
 }
 ```
 
-Full docs, the format table, and a clonable demo: **https://github.com/OWNER/lockstep**
+Full docs, the format table, and a clonable demo: **https://github.com/OWNER/agentmirror**
 
 ## License
 

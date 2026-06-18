@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
-import type { RepoIndex } from '@lockstep/core';
+import type { RepoIndex } from '@agentmirror/core';
 
 /** Directories we never descend into when indexing the repo. */
 const IGNORE = new Set([

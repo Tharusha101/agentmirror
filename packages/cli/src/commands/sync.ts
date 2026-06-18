@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { parse, renderTargets, normalize } from '@lockstep/core';
+import { parse, renderTargets, normalize } from '@agentmirror/core';
 import { loadConfig } from '../config';
 import { sym, title, dim } from '../report';
 
@@ -21,7 +21,7 @@ export function runSync({ cwd = process.cwd(), quiet = false }: CommandOptions =
   const config = loadConfig(cwd);
   const srcPath = join(cwd, config.source);
   if (!existsSync(srcPath)) {
-    throw new Error(`${config.source} not found. Run \`lockstep init\` first.`);
+    throw new Error(`${config.source} not found. Run \`agentmirror init\` first.`);
   }
 
   const doc = parse(readFileSync(srcPath, 'utf8'));
@@ -46,7 +46,7 @@ export function runSync({ cwd = process.cwd(), quiet = false }: CommandOptions =
   }
 
   if (!quiet) {
-    title('lockstep sync');
+    title('agentmirror sync');
     for (const w of written) {
       const mark = w.status === 'unchanged' ? sym.dot : sym.ok;
       console.log(`  ${mark} ${w.path} ${dim(`(${w.status})`)}`);

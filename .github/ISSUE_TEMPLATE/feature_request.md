@@ -5,7 +5,7 @@ labels: enhancement
 ---
 
 **The problem**
-What are you trying to do that Lockstep doesn't support?
+What are you trying to do that AgentMirror doesn't support?
 
 **Proposed solution**
 For a new format: which tool, and the exact file path / shape it expects.

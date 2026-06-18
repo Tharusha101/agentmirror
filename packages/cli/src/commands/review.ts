@@ -7,7 +7,7 @@ import { title, dim } from '../report';
  * rather than shipping a fake.
  */
 export function runReview(): { available: false } {
-  title('lockstep review');
+  title('agentmirror review');
   console.log(dim('  AI-assisted review (suggest bloat cuts, detect likely-stale rules) is a'));
   console.log(dim('  paid, opt-in feature on the roadmap (Phase 3). It will use a Haiku-class'));
   console.log(dim('  model with prompt caching and always show a diff for you to approve —'));

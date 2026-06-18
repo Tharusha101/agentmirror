@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { parse, renderTargets, detectDrift, checkReferences } from '@lockstep/core';
-import type { DriftResult, StaleFinding } from '@lockstep/core';
+import { parse, renderTargets, detectDrift, checkReferences } from '@agentmirror/core';
+import type { DriftResult, StaleFinding } from '@agentmirror/core';
 import { loadConfig } from '../config';
 import { buildRepoIndex } from '../fs-utils';
 import { sym, title, dim } from '../report';
@@ -21,7 +21,7 @@ export function runCheck({ cwd = process.cwd(), quiet = false }: CommandOptions 
   const config = loadConfig(cwd);
   const srcPath = join(cwd, config.source);
   if (!existsSync(srcPath)) {
-    throw new Error(`${config.source} not found. Run \`lockstep init\` first.`);
+    throw new Error(`${config.source} not found. Run \`agentmirror init\` first.`);
   }
 
   const doc = parse(readFileSync(srcPath, 'utf8'));
@@ -38,14 +38,14 @@ export function runCheck({ cwd = process.cwd(), quiet = false }: CommandOptions 
   const ok = drift.every((d) => d.status === 'ok') && stale.length === 0;
 
   if (!quiet) {
-    title('lockstep check');
+    title('agentmirror check');
     for (const d of drift) {
       if (d.status === 'ok') {
         console.log(`  ${sym.ok} ${d.path}`);
       } else if (d.status === 'missing') {
-        console.log(`  ${sym.err} ${d.path} ${dim('(missing — run `lockstep sync`)')}`);
+        console.log(`  ${sym.err} ${d.path} ${dim('(missing — run `agentmirror sync`)')}`);
       } else {
-        console.log(`  ${sym.err} ${d.path} ${dim('(drifted — run `lockstep sync`)')}`);
+        console.log(`  ${sym.err} ${d.path} ${dim('(drifted — run `agentmirror sync`)')}`);
       }
     }
     for (const s of stale) {

@@ -7,6 +7,6 @@ export default defineConfig({
   clean: true,
   sourcemap: true,
   // Bundle the engine so the published CLI is self-contained.
-  noExternal: ['@lockstep/core'],
+  noExternal: ['@agentmirror/core'],
   banner: { js: '#!/usr/bin/env node' },
 });

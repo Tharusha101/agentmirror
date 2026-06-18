@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { parse, lint } from '@lockstep/core';
-import type { LintFinding } from '@lockstep/core';
+import { parse, lint } from '@agentmirror/core';
+import type { LintFinding } from '@agentmirror/core';
 import { loadConfig } from '../config';
 import { buildRepoIndex } from '../fs-utils';
 import { sym, title, dim } from '../report';
@@ -17,7 +17,7 @@ export function runLint({ cwd = process.cwd(), quiet = false }: CommandOptions =
   const config = loadConfig(cwd);
   const srcPath = join(cwd, config.source);
   if (!existsSync(srcPath)) {
-    throw new Error(`${config.source} not found. Run \`lockstep init\` first.`);
+    throw new Error(`${config.source} not found. Run \`agentmirror init\` first.`);
   }
 
   const doc = parse(readFileSync(srcPath, 'utf8'));
@@ -25,7 +25,7 @@ export function runLint({ cwd = process.cwd(), quiet = false }: CommandOptions =
   const ok = !findings.some((f) => f.severity === 'error');
 
   if (!quiet) {
-    title('lockstep lint');
+    title('agentmirror lint');
     if (findings.length === 0) {
       console.log(dim('  Lean and clean — no findings.'));
     } else {

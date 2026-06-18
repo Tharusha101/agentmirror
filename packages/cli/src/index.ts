@@ -12,7 +12,7 @@ const VERSION = '0.1.0';
 const program = new Command();
 
 program
-  .name('lockstep')
+  .name('agentmirror')
   .description('One canonical AGENTS.md, synced to every AI coding tool — drift-checked and lean.')
   .version(VERSION)
   .option('--cwd <dir>', 'run as if started in <dir>');
@@ -29,7 +29,7 @@ function fail(err: unknown): void {
 
 program
   .command('init')
-  .description('Create a canonical AGENTS.md and lockstep.config.json (you curate them).')
+  .description('Create a canonical AGENTS.md and agentmirror.config.json (you curate them).')
   .option('-y, --yes', 'non-interactive: accept defaults, never prompt')
   .action(async (opts: { yes?: boolean }) => {
     try {

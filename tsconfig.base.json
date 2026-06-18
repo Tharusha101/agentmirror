@@ -15,7 +15,7 @@
     "baseUrl": ".",
     "types": ["node"],
     "paths": {
-      "@lockstep/core": ["packages/core/src/index.ts"]
+      "@agentmirror/core": ["packages/core/src/index.ts"]
     }
   }
 }

@@ -1,4 +1,4 @@
-# Lockstep
+# AgentMirror
 
 > One canonical `AGENTS.md`, synced to every AI coding tool — kept drift-free and lean.
 
@@ -8,36 +8,36 @@
 
 Every AI coding tool wants its own context file: Claude Code reads `CLAUDE.md`, Cursor reads `.cursor/rules/`, Copilot reads `.github/copilot-instructions.md`, and so on. Teams using more than one tool copy the same rules into several files — and they **drift apart within weeks**. Symlinking is the usual hack, but symlinks break on Windows and in CI and can't express per-tool format differences.
 
-Lockstep treats **`AGENTS.md` as the single source of truth** and:
+AgentMirror treats **`AGENTS.md` as the single source of truth** and:
 
 1. **Syncs** it to every other tool's format — real files, cross-platform, no symlinks.
 2. **Detects drift** — when a mirror diverges from the source, or a rule references a file/script that no longer exists.
 3. **Lints for leanness** — flags bloat and stale references so the file stays short and accurate.
 
-> Why bother: agents with no project context file complete tasks correctly ~30% of the time; with a good, lean context file, ~90%. Lockstep keeps that file correct everywhere, automatically.
+> Why bother: agents with no project context file complete tasks correctly ~30% of the time; with a good, lean context file, ~90%. AgentMirror keeps that file correct everywhere, automatically.
 
 ## Install
 
 ```bash
-npm install -g lockstep
+npm install -g agentmirror
 ```
 
 Or run without installing:
 
 ```bash
-npx lockstep <command>
+npx agentmirror <command>
 ```
 
 ## Quick start
 
 ```bash
-lockstep init     # create AGENTS.md + lockstep.config.json (you curate them)
-lockstep sync     # regenerate every mirror from AGENTS.md
-lockstep check    # CI gate: fail if mirrors drift or rules go stale
-lockstep lint     # flag bloat / stale references; suggest cuts
+agentmirror init     # create AGENTS.md + agentmirror.config.json (you curate them)
+agentmirror sync     # regenerate every mirror from AGENTS.md
+agentmirror check    # CI gate: fail if mirrors drift or rules go stale
+agentmirror lint     # flag bloat / stale references; suggest cuts
 ```
 
-Edit `AGENTS.md`, run `lockstep sync`, and `CLAUDE.md`, `.cursor/rules/agents.mdc`, `.github/copilot-instructions.md`, `GEMINI.md`, `.windsurfrules`, and `.clinerules` are regenerated from it. Each generated file carries a banner so no one hand-edits a mirror by mistake.
+Edit `AGENTS.md`, run `agentmirror sync`, and `CLAUDE.md`, `.cursor/rules/agents.mdc`, `.github/copilot-instructions.md`, `GEMINI.md`, `.windsurfrules`, and `.clinerules` are regenerated from it. Each generated file carries a banner so no one hand-edits a mirror by mistake.
 
 ## Migrating from scattered rule files
 
@@ -48,8 +48,8 @@ Already have a `CLAUDE.md`, a `.cursorrules`, and a `copilot-instructions.md` dr
 Add a check so a drifted or stale context file fails the build:
 
 ```yaml
-# .github/workflows/lockstep.yml
-name: lockstep
+# .github/workflows/agentmirror.yml
+name: agentmirror
 on: [push, pull_request]
 jobs:
   check:
@@ -58,12 +58,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
-      - run: npx lockstep check
+      - run: npx agentmirror check
 ```
 
 ## Configuration
 
-`lockstep.config.json` (written by `lockstep init`):
+`agentmirror.config.json` (written by `agentmirror init`):
 
 ```json
 {
@@ -90,14 +90,14 @@ Codex, Amp, Aider, Zed, Warp, and others read `AGENTS.md` directly — no mirror
 
 ## A note on AI
 
-Lockstep does **not** auto-generate walls of context for you. Research in 2026 found LLM-generated context files *hurt* agent accuracy and raise cost, while lean, human-curated files help. Sync and drift detection are fully deterministic — no AI. AI is reserved for a future opt-in `review` that only *suggests* cuts and shows a diff you approve; it never writes rules for you.
+AgentMirror does **not** auto-generate walls of context for you. Research in 2026 found LLM-generated context files *hurt* agent accuracy and raise cost, while lean, human-curated files help. Sync and drift detection are fully deterministic — no AI. AI is reserved for a future opt-in `review` that only *suggests* cuts and shows a diff you approve; it never writes rules for you.
 
 ## Repo layout
 
 | Package          | What it is                                                      |
 | ---------------- | -------------------------------------------------------------- |
 | `packages/core`  | Pure engine: parse, render mirrors, detect drift, lint. No I/O.|
-| `packages/cli`   | The `lockstep` command, wrapping `core`.                        |
+| `packages/cli`   | The `agentmirror` command, wrapping `core`.                        |
 | `examples/demo-repo` | A clonable example showing AGENTS.md + generated mirrors.   |
 
 ## Develop

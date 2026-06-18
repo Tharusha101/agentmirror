@@ -2,7 +2,7 @@
   "name": "acme-widgets",
   "version": "1.0.0",
   "private": true,
-  "description": "Demo repo showing Lockstep keeping AGENTS.md in sync.",
+  "description": "Demo repo showing AgentMirror keeping AGENTS.md in sync.",
   "scripts": {
     "build": "tsc",
     "test": "echo \"no tests yet\""

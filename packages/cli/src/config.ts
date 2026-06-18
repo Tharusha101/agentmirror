@@ -1,31 +1,31 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { DEFAULT_TARGETS } from '@lockstep/core';
+import { DEFAULT_TARGETS } from '@agentmirror/core';
 
-export const CONFIG_FILE = 'lockstep.config.json';
+export const CONFIG_FILE = 'agentmirror.config.json';
 
-export interface LockstepConfig {
+export interface AgentMirrorConfig {
   /** Canonical source file. */
   source: string;
-  /** Format ids to keep in sync (see `FORMATS` in @lockstep/core). */
+  /** Format ids to keep in sync (see `FORMATS` in @agentmirror/core). */
   targets: string[];
   /** Glob patterns for references to skip in stale-reference checks. */
   ignore: string[];
-  /** Leanness budgets for `lockstep lint`. */
+  /** Leanness budgets for `agentmirror lint`. */
   lint: { maxLines?: number; maxChars?: number };
 }
 
-export function defaultConfig(): LockstepConfig {
+export function defaultConfig(): AgentMirrorConfig {
   return { source: 'AGENTS.md', targets: [...DEFAULT_TARGETS], ignore: [], lint: {} };
 }
 
-/** Load lockstep.config.json from `cwd`, falling back to sensible defaults. */
-export function loadConfig(cwd: string): LockstepConfig {
+/** Load agentmirror.config.json from `cwd`, falling back to sensible defaults. */
+export function loadConfig(cwd: string): AgentMirrorConfig {
   const base = defaultConfig();
   const path = join(cwd, CONFIG_FILE);
   if (!existsSync(path)) return base;
   try {
-    const raw = JSON.parse(readFileSync(path, 'utf8')) as Partial<LockstepConfig>;
+    const raw = JSON.parse(readFileSync(path, 'utf8')) as Partial<AgentMirrorConfig>;
     return {
       source: raw.source ?? base.source,
       targets: raw.targets ?? base.targets,

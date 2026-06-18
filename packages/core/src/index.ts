@@ -1,5 +1,5 @@
 /**
- * @lockstep/core — the pure engine shared by the CLI and the GitHub App.
+ * @agentmirror/core — the pure engine shared by the CLI and the GitHub App.
  *
  * Parse a canonical AGENTS.md, render every tool mirror, detect drift, and
  * lint for leanness — all without touching the filesystem.

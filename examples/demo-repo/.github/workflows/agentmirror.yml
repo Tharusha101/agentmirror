@@ -1,4 +1,4 @@
-name: lockstep
+name: agentmirror
 on: [push, pull_request]
 jobs:
   check:
@@ -8,4 +8,4 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npx lockstep check
+      - run: npx agentmirror check

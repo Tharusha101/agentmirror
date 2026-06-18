@@ -1,9 +1,9 @@
-# @lockstep/core
+# @agentmirror/core
 
-The pure engine behind [Lockstep](../../README.md). No filesystem access — it takes strings and a repo index, and returns rendered files, drift results, and lint findings. Both the CLI and the GitHub App import it.
+The pure engine behind [AgentMirror](../../README.md). No filesystem access — it takes strings and a repo index, and returns rendered files, drift results, and lint findings. Both the CLI and the GitHub App import it.
 
 ```ts
-import { parse, renderTargets, detectDrift, lint } from '@lockstep/core';
+import { parse, renderTargets, detectDrift, lint } from '@agentmirror/core';
 
 const doc = parse(agentsMdText);
 const mirrors = renderTargets(doc, ['claude', 'cursor', 'copilot']);
