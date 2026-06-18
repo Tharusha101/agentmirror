@@ -1,0 +1,12 @@
+# Normalize line endings to LF in the repo (checkout native), so generated
+# mirrors and source files stay byte-identical across macOS/Linux/Windows —
+# the same cross-platform discipline the product enforces.
+* text=auto eol=lf
+
+# Lockfiles and snapshots: keep LF, never treat as text needing CRLF.
+package-lock.json -text
+
+# Binaries (none yet, but future-proof).
+*.png binary
+*.jpg binary
+*.ico binary

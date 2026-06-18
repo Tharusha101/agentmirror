@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "One canonical AGENTS.md, synced to every AI coding tool — drift-checked and lean.",
   "license": "MIT",
+  "author": "Tharusha <tharusha.pahasara1019@gmail.com>",
   "type": "module",
   "bin": {
     "lockstep": "./dist/index.js"
@@ -21,17 +22,33 @@
     "lint",
     "cli"
   ],
+  "homepage": "https://github.com/OWNER/lockstep#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OWNER/lockstep.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/OWNER/lockstep/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "tsup"
   },
   "dependencies": {
-    "@lockstep/core": "*",
     "commander": "^12.1.0",
     "picocolors": "^1.1.1",
     "prompts": "^2.4.2"
   },
   "devDependencies": {
+    "@lockstep/core": "*",
     "@types/prompts": "^2.4.9"
   }
 }

@@ -2,6 +2,10 @@
 
 > One canonical `AGENTS.md`, synced to every AI coding tool — kept drift-free and lean.
 
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg) ![Node >=18](https://img.shields.io/badge/node-%3E%3D18-brightgreen) ![status: alpha](https://img.shields.io/badge/status-alpha-orange)
+
+> **Status:** alpha (`v0.1.0`). The CLI works and is tested on Linux/macOS/Windows; APIs may still change before `1.0`.
+
 Every AI coding tool wants its own context file: Claude Code reads `CLAUDE.md`, Cursor reads `.cursor/rules/`, Copilot reads `.github/copilot-instructions.md`, and so on. Teams using more than one tool copy the same rules into several files — and they **drift apart within weeks**. Symlinking is the usual hack, but symlinks break on Windows and in CI and can't express per-tool format differences.
 
 Lockstep treats **`AGENTS.md` as the single source of truth** and:
