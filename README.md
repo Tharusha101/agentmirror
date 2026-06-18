@@ -6,6 +6,10 @@
 
 > **Status:** alpha (`v0.1.0`). The CLI works and is tested on Linux/macOS/Windows; APIs may still change before `1.0`.
 
+<p align="center">
+  <img src="demo/agentmirror-demo.svg" alt="AgentMirror CLI demo: sync AGENTS.md to every tool, catch drift and stale rules in CI" width="760">
+</p>
+
 Every AI coding tool wants its own context file: Claude Code reads `CLAUDE.md`, Cursor reads `.cursor/rules/`, Copilot reads `.github/copilot-instructions.md`, and so on. Teams using more than one tool copy the same rules into several files — and they **drift apart within weeks**. Symlinking is the usual hack, but symlinks break on Windows and in CI and can't express per-tool format differences.
 
 AgentMirror treats **`AGENTS.md` as the single source of truth** and:
