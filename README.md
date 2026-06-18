@@ -104,6 +104,8 @@ AgentMirror does **not** auto-generate walls of context for you. Research in 202
 | `packages/core`  | Pure engine: parse, render mirrors, detect drift, lint. No I/O.|
 | `packages/cli`   | The `agentmirror` command, wrapping `core`.                        |
 | `examples/demo-repo` | A clonable example showing AGENTS.md + generated mirrors.   |
+| `apps/playground` | Browser playground (Vite) running the engine client-side.      |
+| `apps/web`       | Marketing landing page (Next.js + Tailwind, dark/neon).        |
 
 ## Develop
 
